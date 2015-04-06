@@ -3,8 +3,7 @@ __author__ = 'polina'
 import sys
 
 a = sys.argv[1:]
-if type(a) == list:
-    print '!!'
+
 s = ''
 string = s.join(a).lower()
 list1 = list(string)
