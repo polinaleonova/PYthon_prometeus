@@ -34,6 +34,8 @@ res = ''
 for i in listab:
     res += D[i]
 print res
+# file needed some revision - has not worked one test? with '[' and ']'
+
 
 
 
