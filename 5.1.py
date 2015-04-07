@@ -1,14 +1,9 @@
 # import json
-w=[1, 1,'2', 1.0]
+w=[1,1.0,'1',-1,1]
 # print dir(w)
 def clean_list(w):
-    list2 = []
-    for x in w:
-        if x in w:
-            del x
-            print w
-        list2.append(x)
-        print list2
+    list2 = list({x for x in w})
+    print list2
     #
     # [di.update({x: None}) for x in w]
     # l = di.keys()
@@ -16,6 +11,8 @@ def clean_list(w):
     # return l
 
 clean_list(w)
+
+
 
 
 
