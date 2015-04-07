@@ -1,39 +1,33 @@
 __author__ = 'polina'
 
-import os
-import glob
 
-#
-folder  = ['media','polina','8802ebf9-bb70-49ed-923d-a92083b73b2d','learning']
-filename = 'nefileforprometeus.txt'
-# a = sys.argv[1:]
-# print folder, filename
-
-# cwd = os.getcwd()
-# print cwd
-# print os.path.exists('/media/polina/8802ebf9-bb70-49ed-923d-a92083b73b2d/learning/nefileforprometeus.txt')
 
 def file_search(folder, filename):
-    print folder
-    desc = '/'
-    path1 = desc.join(folder)
-    path2 = '/'+path1+ '/'
-    print path2
-    print os.path.exists(path2)
-    names = glob.glob('c:\home\*.txt')
-
-    os.listdir(path1)
-    if os.path.exists('nefileforprometeus.txt'):
-        print path1
+    path = folder[0] + '/'
+    if type(folder) == list:
+        for i in folder[1:]:
+            print i
+            if file_search(i, filename)<>None:
+                path = path + file_search(i, filename)
+                print path
+                return path
+            else:
+                if i == filename:
+                    path = path +i
+                    print path + filename
+                    return path +filename
+                else:
+                    print False
+                    return False
+            # print path + filename
+            # return path +filename
     else:
-        print  False
+        path = path + filename
+        print path
 
 
 
-# ['polina@polina-comp:','media','polina','8802ebf9-bb70-49ed-923d-a92083b73b2d','learning','nefileforprometeus.txt']
+# file_search(['D:', ['recycle bin'], ['tmp', ['old'], ['new folder1', 'asd.txt', 'asd.bak', 'find.me']], 'hey.py'], 'find.me')
+file_search(['C:', '1.txt', '2.txt', '3.txt', '4.txt'], '4.txt')
+# file_search(['/media',['polina','nefileforprometeus.txt']], 'nefileforprometeus.txt')
 
-
-file_search(['media','polina','8802ebf9-bb70-49ed-923d-a92083b73b2d','learning'], 'nefileforprometeus.txt')
-# polina@polina-comp:/home/polina/PycharmProjects/prometeus/1.py
-
-# ['polina@polina-comp:','media','polina','8802ebf9-bb70-49ed-923d-a92083b73b2d','learning','nefileforprometeus.txt'
