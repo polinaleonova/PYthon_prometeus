@@ -15,3 +15,9 @@ else:
 
  print 2*3%2.0
 ##for git
+<<<<<<< HEAD
+=======
+##commit 1
+##commit 2
+##commit 3
+>>>>>>> b480096... commit 3
